@@ -1,0 +1,397 @@
+{
+    "name": "supavisor-native",
+    "displayName": "SupavisorNative",
+    "description": "A Pulumi package for creating and managing SupavisorNative resources.",
+    "keywords": [
+        "pulumi",
+        "supavisor-native",
+        "category/cloud",
+        "kind/native"
+    ],
+    "homepage": "https://cloudysky.software",
+    "license": "Apache-2.0",
+    "repository": "https://github.com/phillarson-xyz/pulumi-supavisor-native",
+    "pluginDownloadURL": "github://api.github.com/phillarson-xyz/pulumi-supavisor-native",
+    "publisher": "Cloudy Sky Software",
+    "language": {
+        "csharp": {
+            "namespaces": {
+                "": "Provider",
+                "supavisor-native": "SUPAVISOR_NATIVE",
+                "tenants": "Tenants"
+            },
+            "packageReferences": {
+                "Pulumi": "3.*"
+            },
+            "rootNamespace": "Pulumi"
+        },
+        "go": {
+            "importBasePath": "github.com/phillarson-xyz/pulumi-supavisor-native/sdk/go/supavisor-native"
+        },
+        "nodejs": {
+            "packageName": "@cloudyskysoftware/pulumi-supavisor-native"
+        },
+        "python": {
+            "packageName": "pulumi_supavisor_native",
+            "pyproject": {
+                "enabled": true
+            },
+            "requires": {
+                "pulumi": "\u003e=3.0.0,\u003c4.0.0"
+            }
+        }
+    },
+    "config": {
+        "variables": {
+            "jwtSecret": {
+                "type": "string",
+                "description": "The JWT secret",
+                "language": {
+                    "csharp": {
+                        "name": "JwtSecret"
+                    }
+                },
+                "secret": true
+            }
+        }
+    },
+    "types": {
+        "supavisor-native:tenants:Tenant": {
+            "properties": {
+                "authQuery": {
+                    "type": "string",
+                    "description": "SELECT rolname, rolpassword FROM pg_authid WHERE rolname=$1"
+                },
+                "dbDatabase": {
+                    "type": "string",
+                    "description": "Database name"
+                },
+                "dbHost": {
+                    "type": "string",
+                    "description": "Database host"
+                },
+                "dbPort": {
+                    "type": "integer",
+                    "description": "Database port"
+                },
+                "enforceSsl": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "externalId": {
+                    "type": "string",
+                    "description": "External ID"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "insertedAt": {
+                    "type": "string"
+                },
+                "ipVersion": {
+                    "type": "string",
+                    "description": "auto"
+                },
+                "requireUser": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "sniHostname": {
+                    "type": "string",
+                    "description": "your.domain.com"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "upstreamSsl": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "upstreamVerify": {
+                    "type": "string",
+                    "description": "none"
+                },
+                "users": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/supavisor-native:tenants:User"
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "dbDatabase",
+                "dbHost",
+                "dbPort",
+                "users"
+            ]
+        },
+        "supavisor-native:tenants:TenantProperties": {
+            "properties": {
+                "allowList": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of CIDR addresses"
+                },
+                "authQuery": {
+                    "type": "string",
+                    "description": "SELECT rolname, rolpassword FROM pg_authid WHERE rolname=$1"
+                },
+                "dbDatabase": {
+                    "type": "string",
+                    "description": "Database name"
+                },
+                "dbHost": {
+                    "type": "string",
+                    "description": "Database host"
+                },
+                "dbPort": {
+                    "type": "integer",
+                    "description": "Database port"
+                },
+                "enforceSsl": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "externalId": {
+                    "type": "string",
+                    "description": "External ID"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "insertedAt": {
+                    "type": "string"
+                },
+                "ipVersion": {
+                    "type": "string",
+                    "description": "auto"
+                },
+                "requireUser": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "sniHostname": {
+                    "type": "string",
+                    "description": "your.domain.com"
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "upstreamSsl": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "upstreamVerify": {
+                    "type": "string",
+                    "description": "none"
+                },
+                "users": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/supavisor-native:tenants:User"
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "dbDatabase",
+                "dbHost",
+                "dbPort",
+                "requireUser",
+                "users"
+            ]
+        },
+        "supavisor-native:tenants:User": {
+            "properties": {
+                "dbPassword": {
+                    "type": "string",
+                    "description": "Database password"
+                },
+                "dbUser": {
+                    "type": "string",
+                    "description": "Database user"
+                },
+                "dbUserAlias": {
+                    "type": "string",
+                    "description": "Database user alias"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "insertedAt": {
+                    "type": "string"
+                },
+                "isManager": {
+                    "type": "boolean",
+                    "description": "The users who can be used for internal needs"
+                },
+                "maxClients": {
+                    "type": "integer",
+                    "description": "Max clients count"
+                },
+                "modeType": {
+                    "type": "string",
+                    "description": "Pooling mode type"
+                },
+                "poolCheckoutTimeout": {
+                    "type": "integer",
+                    "description": "Pool checkout timeout"
+                },
+                "poolSize": {
+                    "type": "integer",
+                    "description": "Pool size"
+                },
+                "tenantExternalId": {
+                    "type": "string",
+                    "description": "External Tenant ID"
+                },
+                "updatedAt": {
+                    "type": "string"
+                }
+            },
+            "type": "object",
+            "required": [
+                "dbPassword",
+                "dbUser",
+                "poolSize"
+            ]
+        }
+    },
+    "provider": {
+        "description": "The provider type for the SupavisorNative package.",
+        "type": "object",
+        "inputProperties": {
+            "jwtSecret": {
+                "type": "string",
+                "description": "The SupavisorNative JWT secret.",
+                "defaultInfo": {
+                    "environment": [
+                        "SUPAVISOR_NATIVE_JWT_SECRET"
+                    ]
+                },
+                "language": {
+                    "csharp": {
+                        "name": "JwtSecret"
+                    }
+                },
+                "secret": true
+            }
+        }
+    },
+    "resources": {
+        "supavisor-native:tenants:Tenant": {
+            "properties": {
+                "authQuery": {
+                    "type": "string",
+                    "description": "SELECT rolname, rolpassword FROM pg_authid WHERE rolname=$1"
+                },
+                "dbDatabase": {
+                    "type": "string",
+                    "description": "Database name"
+                },
+                "dbHost": {
+                    "type": "string",
+                    "description": "Database host"
+                },
+                "dbPort": {
+                    "type": "integer",
+                    "description": "Database port"
+                },
+                "enforceSsl": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "externalId": {
+                    "type": "string",
+                    "description": "External ID"
+                },
+                "insertedAt": {
+                    "type": "string"
+                },
+                "ipVersion": {
+                    "type": "string",
+                    "description": "auto"
+                },
+                "requireUser": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "sniHostname": {
+                    "type": "string",
+                    "description": "your.domain.com"
+                },
+                "tenant": {
+                    "$ref": "#/types/supavisor-native:tenants:TenantProperties",
+                    "language": {
+                        "csharp": {
+                            "name": "TenantValue"
+                        }
+                    }
+                },
+                "updatedAt": {
+                    "type": "string"
+                },
+                "upstreamSsl": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "upstreamVerify": {
+                    "type": "string",
+                    "description": "none"
+                },
+                "users": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/supavisor-native:tenants:User"
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "dbDatabase",
+                "dbHost",
+                "dbPort",
+                "tenant",
+                "users"
+            ],
+            "inputProperties": {
+                "externalId": {
+                    "type": "string",
+                    "description": "External ID of the tenant"
+                },
+                "tenant": {
+                    "$ref": "#/types/supavisor-native:tenants:TenantProperties",
+                    "language": {
+                        "csharp": {
+                            "name": "TenantValue"
+                        }
+                    }
+                }
+            },
+            "requiredInputs": [
+                "tenant"
+            ]
+        }
+    },
+    "functions": {
+        "supavisor-native:tenants:getTenant": {
+            "inputs": {
+                "properties": {
+                    "externalId": {
+                        "type": "string",
+                        "description": "External ID of the tenant"
+                    }
+                },
+                "required": [
+                    "externalId"
+                ]
+            },
+            "outputs": {
+                "$ref": "#/types/supavisor-native:tenants:Tenant"
+            }
+        }
+    }
+}

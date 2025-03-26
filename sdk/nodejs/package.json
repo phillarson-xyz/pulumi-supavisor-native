@@ -1,0 +1,28 @@
+{
+    "name": "@cloudyskysoftware/pulumi-supavisor-native",
+    "version": "${VERSION}",
+    "keywords": [
+        "pulumi",
+        "supavisor-native",
+        "category/cloud",
+        "kind/native"
+    ],
+    "homepage": "https://cloudysky.software",
+    "repository": "https://github.com/phillarson-xyz/pulumi-supavisor-native",
+    "license": "Apache-2.0",
+    "scripts": {
+        "build": "tsc"
+    },
+    "dependencies": {
+        "@pulumi/pulumi": "^3.142.0"
+    },
+    "devDependencies": {
+        "@types/node": "^18",
+        "typescript": "^4.3.5"
+    },
+    "pulumi": {
+        "resource": true,
+        "name": "supavisor-native",
+        "server": "github://api.github.com/phillarson-xyz/pulumi-supavisor-native"
+    }
+}

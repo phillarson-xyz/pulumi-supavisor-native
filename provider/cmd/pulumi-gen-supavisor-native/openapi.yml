@@ -1,0 +1,325 @@
+openapi: 3.1.0
+info:
+  title: Supavisor API
+  version: 2.4.12
+  description: API specification for Supavisor
+
+servers:
+  - url: http://supavisor:4000/api
+    description: Local development server
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    Empty:
+      title: Empty
+    NotFound:
+      title: NotFound
+    Tenant:
+      example:
+        allow_list:
+          - 0.0.0.0/0
+          - ::/0
+        db_database: postgres
+        db_host: localhost
+        db_port: 5432
+        external_id: dev_tenant
+        id: b1024a4c-4eb4-4c64-8f49-c8a46c2b2e16
+        inserted_at: 2023-03-27T12:00:00Z
+        updated_at: 2023-03-27T12:00:00Z
+        users:
+          - db_password: postgres
+            db_user: postgres
+            db_user_alias: postgres
+            external_id: dev_tenant
+            id: b1024a4c-4eb4-4c64-8f49-c8a46c2b2e16
+            inserted_at: 2023-03-27T12:00:00Z
+            is_manager: false
+            max_clients: 25000
+            mode_type: transaction
+            pool_checkout_timeout: 1000
+            pool_size: 10
+            updated_at: 2023-03-27T12:00:00Z
+      properties:
+        auth_query:
+          description: SELECT rolname, rolpassword FROM pg_authid WHERE rolname=$1
+          type: string
+        db_database:
+          description: Database name
+          type: string
+        db_host:
+          description: Database host
+          type: string
+        db_port:
+          description: Database port
+          type: integer
+        enforce_ssl:
+          default: false
+          type: boolean
+        external_id:
+          description: External ID
+          type: string
+        id:
+          format: binary_id
+          readOnly: true
+          type: string
+        inserted_at:
+          format: date_time
+          readOnly: true
+          type: string
+        ip_version:
+          description: auto
+          type: string
+        require_user:
+          default: false
+          type: boolean
+        sni_hostname:
+          description: your.domain.com
+          type: string
+        updated_at:
+          format: date_time
+          readOnly: true
+          type: string
+        upstream_ssl:
+          default: true
+          type: boolean
+        upstream_verify:
+          description: none
+          type: string
+        users:
+          items:
+            $ref: "#/components/schemas/User"
+          type: array
+      required:
+        - db_host
+        - db_port
+        - db_database
+        - users
+      title: Tenant
+      type: object
+    TenantCreate:
+      properties:
+        tenant:
+          example:
+            allow_list:
+              - 0.0.0.0/0
+              - ::/0
+            db_database: postgres
+            db_host: localhost
+            db_port: 5432
+            enforce_ssl: false
+            ip_version: auto
+            require_user: true
+            users:
+              - db_password: postgres
+                db_user: postgres
+                max_clients: 25000
+                mode_type: transaction
+                pool_checkout_timeout: 1000
+                pool_size: 10
+          properties:
+            allow_list:
+              default:
+                - 0.0.0.0/0
+                - ::/0
+              description: List of CIDR addresses
+              type: array
+              items:
+                type: string
+            auth_query:
+              description: SELECT rolname, rolpassword FROM pg_authid WHERE rolname=$1
+              type: string
+            db_database:
+              description: Database name
+              type: string
+            db_host:
+              description: Database host
+              type: string
+            db_port:
+              description: Database port
+              type: integer
+            enforce_ssl:
+              default: false
+              type: boolean
+            external_id:
+              description: External ID
+              type: string
+            id:
+              format: binary_id
+              readOnly: true
+              type: string
+            inserted_at:
+              format: date_time
+              readOnly: true
+              type: string
+            ip_version:
+              description: auto
+              type: string
+            require_user:
+              default: false
+              type: boolean
+            sni_hostname:
+              description: your.domain.com
+              type: string
+            updated_at:
+              format: date_time
+              readOnly: true
+              type: string
+            upstream_ssl:
+              default: true
+              type: boolean
+            upstream_verify:
+              description: none
+              type: string
+            users:
+              items:
+                $ref: "#/components/schemas/User"
+              type: array
+          required:
+            - db_host
+            - db_port
+            - db_database
+            - users
+            - require_user
+          type: object
+      required:
+        - tenant
+      title: TenantCreate
+      type: object
+    User:
+      example:
+        allow_list:
+          - 0.0.0.0/0
+          - ::/0
+        db_password: postgres
+        db_user: postgres
+        db_user_alias: postgres
+        external_id: dev_tenant
+        id: b1024a4c-4eb4-4c64-8f49-c8a46c2b2e16
+        inserted_at: 2023-03-27T12:00:00Z
+        is_manager: false
+        max_clients: 25000
+        mode_type: transaction
+        pool_size: 10
+        updated_at: 2023-03-27T12:00:00Z
+      properties:
+        db_password:
+          description: Database password
+          type: string
+        db_user:
+          description: Database user
+          type: string
+        db_user_alias:
+          description: Database user alias
+          type: string
+        id:
+          format: binary_id
+          readOnly: true
+          type: string
+        inserted_at:
+          format: date_time
+          readOnly: true
+          type: string
+        is_manager:
+          description: The users who can be used for internal needs
+          type: boolean
+        max_clients:
+          description: Max clients count
+          type: integer
+        mode_type:
+          description: Pooling mode type
+          type: string
+        pool_checkout_timeout:
+          description: Pool checkout timeout
+          type: integer
+        pool_size:
+          description: Pool size
+          type: integer
+        tenant_external_id:
+          description: External Tenant ID
+          type: string
+        updated_at:
+          format: date_time
+          readOnly: true
+          type: string
+      required:
+        - db_user
+        - db_password
+        - pool_size
+      title: User
+      type: object
+paths:
+  "/tenants/{external_id}":
+    parameters:
+      - name: external_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: External ID of the tenant
+    delete:
+      callbacks: {}
+      operationId: deleteTenant
+      responses:
+        "204":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+          description: ""
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+          description: Not found
+      summary: Delete source
+      tags: []
+    get:
+      callbacks: {}
+      operationId: getTenant
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Tenant"
+          description: Tenant Response
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+          description: Not found
+      summary: Fetch Tenant
+      tags: []
+    put:
+      callbacks: {}
+      operationId: updateTenant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TenantCreate"
+        description: Tenant Create Params
+        required: false
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Tenant"
+          description: Created Response
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NotFound"
+          description: Not found
+      summary: Create or update tenant
+      tags: []
+security:
+  - BearerAuth: []
