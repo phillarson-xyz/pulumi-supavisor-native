@@ -4,7 +4,7 @@ SHELL = /bin/bash
 
 PACK             := supavisor-native
 PACKDIR          := sdk
-PROJECT          := /Users/plarson/Source/phillarson-xyz/pulumi-supavisor-native
+PROJECT          := github.com/phillarson-xyz/pulumi-supavisor-native
 NODE_MODULE_NAME := @phillarson-xyz/pulumi-supavisor-native
 NUGET_PKG_NAME   := Pulumi.SupavisorNative
 
