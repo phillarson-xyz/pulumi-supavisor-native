@@ -1,6 +1,8 @@
 module github.com/phillarson-xyz/pulumi-supavisor-native/provider
 
-go 1.21
+go 1.23.1
+
+toolchain go1.24.1
 
 require (
 	github.com/getkin/kin-openapi v0.131.0

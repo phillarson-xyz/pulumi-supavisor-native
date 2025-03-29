@@ -5,7 +5,7 @@ info:
   description: API specification for Supavisor
 
 servers:
-  - url: http://supavisor:4000/api
+  - url: http://supavisor-supavisor.supavisor.svc.cluster.local:4000/api
     description: Local development server
 
 components:

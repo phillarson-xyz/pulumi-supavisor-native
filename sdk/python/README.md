@@ -13,13 +13,13 @@ Supavisor is a cloud-native, multi-tenant Postgres connection pooler developed b
 
 ## Using The Provider
 
-You'll need to configure the provider with your Supavisor JWT secret. Set it as a secret using:
+Change the URL in `provider/cmd/provider-gen-supavisor-native/openapi.yml` to your url. You'll also need to configure the provider with your Supavisor JWT secret. Set it as a secret using:
 
 ```bash
 pulumi config set --secret supavisor:jwtSecret <your-jwt-secret>
 ```
 
-The JWT secret can also be set via the `SUPAVISOR_NATIVE_JWT_SECRET` environment variable or passed as any pulumi.Input such as a stack reference.
+The JWT secret can also be set via the `SUPAVISOR_NATIVE_JWT_SECRET` environment variable or passed in as any `pulumi.Input` such as a stack reference.
 
 ### Basic Usage
 
