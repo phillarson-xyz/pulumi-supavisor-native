@@ -197,5 +197,5 @@ require (
 	lukechampine.com/frand v1.5.1 // indirect
 )
 
-replace github.com/cloudy-sky-software/pulschema => github.com/phillarson-xyz/pulschema main
-replace github.com/cloudy-sky-software/pulumi-provider-framework => github.com/phillarson-xyz/pulumi-provider-framework main
+replace github.com/cloudy-sky-software/pulschema => github.com/phillarson-xyz/pulschema v0.0.0-20250329150000-275b63f13080
+replace github.com/cloudy-sky-software/pulumi-provider-framework => github.com/phillarson-xyz/pulumi-provider-framework v0.0.0-20250329150000-66c15e4575b3
