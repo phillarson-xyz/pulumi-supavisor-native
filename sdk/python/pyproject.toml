@@ -1,22 +1,27 @@
 [project]
-  name = "pulumi_supavisor_native"
-  description = "A Pulumi package for creating and managing SupavisorNative resources."
-  dependencies = ["parver>=0.2.1", "pulumi>=3.0.0,<4.0.0", "semver>=2.8.1", "typing-extensions>=4.11; python_version < \"3.11\""]
-  keywords = ["pulumi", "supavisor-native", "category/cloud", "kind/native"]
-  readme = "README.md"
-  requires-python = ">=3.9"
-  version = "0.0.0"
-  [project.license]
-    text = "Apache-2.0"
-  [project.urls]
-    Homepage = "https://cloudysky.software"
-    Repository = "https://github.com/phillarson-xyz/pulumi-supavisor-native"
+dependencies = [
+  "parver>=0.2.1",
+  "pulumi>=3.0.0,<4.0.0",
+  "semver>=2.8.1",
+  "typing-extensions>=4.11; python_version < \"3.11\"",
+]
+description = "A Pulumi package for creating and managing SupavisorNative resources."
+keywords = ["category/cloud", "kind/native", "pulumi", "supavisor-native"]
+name = "pulumi_supavisor_native"
+readme = "README.md"
+requires-python = ">=3.9"
+version = "0.0.0"
+[project.license]
+text = "Apache-2.0"
+[project.urls]
+Homepage   = "https://cloudysky.software"
+Repository = "https://github.com/phillarson-xyz/pulumi-supavisor-native"
 
 [build-system]
-  requires = ["setuptools>=61.0"]
-  build-backend = "setuptools.build_meta"
+build-backend = "setuptools.build_meta"
+requires      = ["setuptools>=61.0"]
 
 [tool]
-  [tool.setuptools]
-    [tool.setuptools.package-data]
-      pulumi_supavisor_native = ["py.typed", "pulumi-plugin.json"]
+[tool.setuptools]
+[tool.setuptools.package-data]
+pulumi_supavisor_native = ["pulumi-plugin.json", "py.typed"]
