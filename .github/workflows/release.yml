@@ -37,6 +37,7 @@ jobs:
         run: make test
 
   publish-binary:
+    permissions: write-all
     name: Publish binary
     runs-on: ${{ matrix.agent-os }}
     needs: lint
