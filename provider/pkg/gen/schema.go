@@ -121,7 +121,7 @@ func PulumiSchema(openapiDoc openapi3.T) (pschema.PackageSpec, openapigen.Provid
 		"importBasePath": "github.com/phillarson-xyz/pulumi-supavisor-native/sdk/go/supavisor-native",
 	})
 	pkg.Language["nodejs"] = rawMessage(map[string]interface{}{
-		"packageName": "@cloudyskysoftware/pulumi-supavisor-native",
+		"packageName": "@phillarson-xyz/pulumi-supavisor-native",
 	})
 	pkg.Language["python"] = rawMessage(map[string]interface{}{
 		"packageName": "pulumi_supavisor_native",

@@ -29,7 +29,7 @@
             "importBasePath": "github.com/phillarson-xyz/pulumi-supavisor-native/sdk/go/supavisor-native"
         },
         "nodejs": {
-            "packageName": "@cloudyskysoftware/pulumi-supavisor-native"
+            "packageName": "@phillarson-xyz/pulumi-supavisor-native"
         },
         "python": {
             "packageName": "pulumi_supavisor_native",

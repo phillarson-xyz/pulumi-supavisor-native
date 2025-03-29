@@ -1,5 +1,5 @@
 {
-    "name": "@cloudyskysoftware/pulumi-supavisor-native",
+    "name": "@phillarson-xyz/pulumi-supavisor-native",
     "version": "${VERSION}",
     "keywords": [
         "pulumi",
