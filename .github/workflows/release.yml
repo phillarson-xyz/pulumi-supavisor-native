@@ -1,5 +1,6 @@
 name: release
 on:
+  workflow_dispatch:  # Allows manual triggering
   push:
     tags:
       - v*.*.*
@@ -13,7 +14,7 @@ env:
   NUGET_PUBLISH_KEY: ${{ secrets.NUGET_API_KEY }}
   NUGET_FEED_URL: https://api.nuget.org/v3/index.json
   PUBLISH_NUGET: true
-  PYPI_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+  PYPI_PASSWORD: ${{ secrets.PYPI_API_TOKEN }} 
   # PYPI usernames for API tokens is literally __token__.
   PYPI_USERNAME: "__token__"
   PUBLISH_PYPI: true
@@ -166,7 +167,6 @@ jobs:
         name: publish nuget package
         run: |
           dotnet nuget push ${{github.workspace}}/sdk/dotnet/bin/Debug/*.nupkg -s ${{ env.NUGET_FEED_URL }} -k ${{ env.NUGET_PUBLISH_KEY }}
-          echo "done publishing packages"
     strategy:
       fail-fast: true
       matrix:
