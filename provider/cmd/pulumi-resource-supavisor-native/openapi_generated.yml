@@ -313,4 +313,4 @@ security:
     - BearerAuth: []
 servers:
     - description: Local development server
-      url: http://supabase-supavisor.supavisor.svc.cluster.local:4000/api
+      url: http://supabase-supavisor.supabase.svc.cluster.local:4000/api
