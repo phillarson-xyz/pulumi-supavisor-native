@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Cloudy Sky Software</Authors>
-    <Company>Cloudy Sky Software</Company>
+    <Authors>Phil Larson</Authors>
+    <Company>Phil Larson</Company>
     <Description>A Pulumi package for creating and managing SupavisorNative resources.</Description>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageProjectUrl>https://cloudysky.software</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/phillarson-xyz/pulumi-supavisor-native</PackageProjectUrl>
     <RepositoryUrl>https://github.com/phillarson-xyz/pulumi-supavisor-native</RepositoryUrl>
     <PackageIcon>logo.png</PackageIcon>
 

@@ -9,7 +9,7 @@
   [project.license]
     text = "Apache-2.0"
   [project.urls]
-    Homepage = "https://cloudysky.software"
+    Homepage = "https://github.com/phillarson-xyz/pulumi-supavisor-native"
     Repository = "https://github.com/phillarson-xyz/pulumi-supavisor-native"
 
 [build-system]

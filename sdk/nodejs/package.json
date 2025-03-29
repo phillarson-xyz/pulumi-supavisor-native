@@ -7,7 +7,7 @@
         "category/cloud",
         "kind/native"
     ],
-    "homepage": "https://cloudysky.software",
+    "homepage": "https://github.com/phillarson-xyz/pulumi-supavisor-native",
     "repository": "https://github.com/phillarson-xyz/pulumi-supavisor-native",
     "license": "Apache-2.0",
     "scripts": {

@@ -8,11 +8,11 @@
         "category/cloud",
         "kind/native"
     ],
-    "homepage": "https://cloudysky.software",
+    "homepage": "https://github.com/phillarson-xyz/pulumi-supavisor-native",
     "license": "Apache-2.0",
     "repository": "https://github.com/phillarson-xyz/pulumi-supavisor-native",
     "pluginDownloadURL": "github://api.github.com/phillarson-xyz/pulumi-supavisor-native",
-    "publisher": "Cloudy Sky Software",
+    "publisher": "Phil Larson",
     "language": {
         "csharp": {
             "namespaces": {

@@ -32,8 +32,8 @@ func PulumiSchema(openapiDoc openapi3.T) (pschema.PackageSpec, openapigen.Provid
 			"category/cloud",
 			"kind/native",
 		},
-		Homepage:   "https://cloudysky.software",
-		Publisher:  "Cloudy Sky Software",
+		Homepage:   "https://github.com/phillarson-xyz/pulumi-supavisor-native",
+		Publisher:  "Phil Larson",
 		Repository: "https://github.com/phillarson-xyz/pulumi-supavisor-native",
 
 		Config: pschema.ConfigSpec{
