@@ -18,8 +18,8 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/logging"
 	pulumirpc "github.com/pulumi/pulumi/sdk/v3/proto/go"
 
-	fwCallback "github.com/cloudy-sky-software/pulumi-provider-framework/callback"
-	fwRest "github.com/cloudy-sky-software/pulumi-provider-framework/rest"
+	fwCallback "github.com/phillarson-xyz/pulumi-provider-framework/callback"
+	fwRest "github.com/phillarson-xyz/pulumi-provider-framework/rest"
 )
 
 type supavisorNativeProvider struct {

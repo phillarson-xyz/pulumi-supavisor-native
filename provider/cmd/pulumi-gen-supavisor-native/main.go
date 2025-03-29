@@ -17,7 +17,7 @@ import (
 	providerSchemaGen "github.com/phillarson-xyz/pulumi-supavisor-native/provider/pkg/gen"
 	providerVersion "github.com/phillarson-xyz/pulumi-supavisor-native/provider/pkg/version"
 
-	"github.com/cloudy-sky-software/pulumi-provider-framework/openapi"
+	"github.com/phillarson-xyz/pulumi-provider-framework/openapi"
 
 	"github.com/pkg/errors"
 

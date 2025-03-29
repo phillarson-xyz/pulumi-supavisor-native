@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/cloudy-sky-software/pulumi-provider-framework/openapi"
-	"github.com/cloudy-sky-software/pulumi-provider-framework/state"
+	"github.com/phillarson-xyz/pulumi-provider-framework/openapi"
+	"github.com/phillarson-xyz/pulumi-provider-framework/state"
 
 	"github.com/stretchr/testify/assert"
 

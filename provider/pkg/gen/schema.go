@@ -12,7 +12,7 @@ import (
 
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/contract"
 
-	openapigen "github.com/cloudy-sky-software/pulschema/pkg"
+	openapigen "github.com/phillarson-xyz/pulschema/pkg"
 
 	"github.com/phillarson-xyz/pulumi-supavisor-native/provider/pkg/gen/examples"
 )
