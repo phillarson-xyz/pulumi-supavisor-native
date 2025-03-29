@@ -12,7 +12,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"gopkg.in/yaml.v3"
+	yaml "gopkg.in/yaml.v3"
 
 	providerSchemaGen "github.com/phillarson-xyz/pulumi-supavisor-native/provider/pkg/gen"
 	providerVersion "github.com/phillarson-xyz/pulumi-supavisor-native/provider/pkg/version"
