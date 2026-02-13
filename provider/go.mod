@@ -1,6 +1,6 @@
 module github.com/phillarson-xyz/pulumi-supavisor-native/provider
 
-go 1.21
+go 1.23.1
 
 require (
 	github.com/getkin/kin-openapi v0.131.0
@@ -12,7 +12,7 @@ require (
 require github.com/stretchr/testify v1.10.0
 
 require (
-	github.com/golang-jwt/jwt/v4 v4.4.2
+	github.com/golang-jwt/jwt/v4 v4.5.2
 	github.com/phillarson-xyz/pulschema v0.0.0-20250329175018-dafbeda1c191
 	github.com/phillarson-xyz/pulumi-provider-framework v0.0.0-20250329174146-e136d8b80167
 	github.com/pkg/errors v0.9.1
