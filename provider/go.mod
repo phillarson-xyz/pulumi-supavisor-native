@@ -14,7 +14,7 @@ require github.com/stretchr/testify v1.10.0
 require (
 	github.com/golang-jwt/jwt/v4 v4.4.2
 	github.com/phillarson-xyz/pulschema v0.0.0-20250329175018-dafbeda1c191
-	github.com/phillarson-xyz/pulumi-provider-framework v0.0.0-20250329174146-e136d8b80167
+	github.com/phillarson-xyz/pulumi-provider-framework v0.0.0-20260710165944-98fa49509743
 	github.com/pkg/errors v0.9.1
 )
 
